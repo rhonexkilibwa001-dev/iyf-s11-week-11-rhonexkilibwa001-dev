@@ -2,16 +2,16 @@
 
 A full-featured API built with Express, MongoDB, and JWT authentication. This project demonstrates database persistence, user authentication, and RESTful API best practices.
 
-## 📋 Features
+## Features
 
-- ✅ **MongoDB Integration** - Data persistence with Mongoose ODM
-- ✅ **User Authentication** - JWT-based authentication with bcrypt password hashing
-- ✅ **CRUD Operations** - Full Create, Read, Update, Delete for posts and comments
-- ✅ **Authorization** - User-based authorization (only authors can edit/delete their posts)
-- ✅ **Search & Filtering** - Filter posts by author, search by text, pagination
-- ✅ **Relationships** - One-to-many relationships between users, posts, and comments
+- **MongoDB Integration** - Data persistence with Mongoose ODM
+-  **User Authentication** - JWT-based authentication with bcrypt password hashing
+-  **CRUD Operations** - Full Create, Read, Update, Delete for posts and comments
+-  **Authorization** - User-based authorization (only authors can edit/delete their posts)
+-  **Search & Filtering** - Filter posts by author, search by text, pagination
+-  **Relationships** - One-to-many relationships between users, posts, and comments
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Node.js (v14+)
@@ -194,10 +194,10 @@ CREATE TABLE posts (
 ```
 
 Demonstrated:
-- ✅ Creating tables and inserting data
-- ✅ SELECT queries with WHERE clauses
-- ✅ Sorting and filtering
-- ✅ INNER JOIN between tables
+-  Creating tables and inserting data
+-  SELECT queries with WHERE clauses
+- Sorting and filtering
+-  INNER JOIN between tables
 
 See `sql-practice.db` for examples.
 
