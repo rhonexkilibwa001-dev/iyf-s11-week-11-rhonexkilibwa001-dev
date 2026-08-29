@@ -1,33 +1,23 @@
 const express = require('express');
-const cors = require('cors');
-
-const authRoutes = require('./routes/auth');
-const postsRoutes = require('./routes/posts');
+const logger = require('./middleware/logger');
+const errorHandler = require('./middleware/errorHandler');
+const routes = require('./routes');
 
 const app = express();
 
 // Middleware
-app.use(cors());
 app.use(express.json());
+app.use(logger);
 
 // Routes
-app.use('/api/auth', authRoutes);
-app.use('/api/posts', postsRoutes);
-
-// Health check
-app.get('/api/health', (req, res) => {
-    res.json({ status: 'Server is running' });
-});
-
-// Error handling middleware
-app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).json({ error: 'Something went wrong' });
-});
+app.use('/api', routes);
 
 // 404 handler
 app.use((req, res) => {
-    res.status(404).json({ error: 'Route not found' });
+  res.status(404).json({ error: 'Route not found' });
 });
+
+// Error handler (last)
+app.use(errorHandler);
 
 module.exports = app;
